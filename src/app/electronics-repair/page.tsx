@@ -63,7 +63,7 @@ export default function ElectronicsRepair() {
       </div>
 
       {/* Contact Section */}
-      <ContactForm title="Contact Us for Electronics Repair" layout="left" formAction="#" includePhone={false} />
+      <ContactForm />
 
       <Footer />
     </div>
