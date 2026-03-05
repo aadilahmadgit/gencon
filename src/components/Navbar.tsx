@@ -50,7 +50,7 @@ export default function Navbar() {
               <ul className="absolute top-6 left-0 bg-gray-700 text-white shadow-lg rounded-lg p-3 space-y-2 w-48">
                 <li><Link href="/ac-repair" className="hover:text-gray-300 block">HVAC Systems</Link></li>
                 <li><Link href="/electronics-repair" className="hover:text-gray-300 block">Electro Mechanical</Link></li>
-                 <li><Link href="/working" className="hover:text-gray-300 block">Electricals</Link></li>
+                 <li><Link href="/working" className="hover:text-gray-300 block">MEP</Link></li>
                 <li><Link href="/working" className="hover:text-gray-300 block">Renewable Energy</Link></li>
                 <li><Link href="/working" className="hover:text-gray-300 block">Home Appliances</Link></li>
                
