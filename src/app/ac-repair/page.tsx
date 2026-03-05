@@ -63,7 +63,7 @@ export default function ACRepair() {
       </div>
 
       {/* Contact Section */}
-      <ContactForm title="Contact Us for AC Repair" layout="left" formAction="#" includePhone={false} />
+      <ContactForm />
 
       <Footer />
     </div>
