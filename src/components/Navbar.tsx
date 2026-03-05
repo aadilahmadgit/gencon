@@ -11,7 +11,7 @@ export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-transparent backdrop-blur-md">
+    <nav className="sticky top-0 z-50 bg-gray-800 text-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-2">
 
         {/* Logo */}
@@ -22,56 +22,56 @@ export default function Navbar() {
         />
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center space-x-6 font-bold text-black">
+        <ul className="hidden md:flex items-center space-x-6 font-bold">
 
-          <li className="hover:text-gray-600 transition">
+          <li className="hover:text-gray-300 transition">
             <Link href="/">Home</Link>
           </li>
 
-          <li className="hover:text-gray-600 transition">
+          <li className="hover:text-gray-300 transition">
             <Link href="/about">About</Link>
           </li>
 
-          <li className="hover:text-gray-600 transition">
+          <li className="hover:text-gray-300 transition">
             <Link href="/blog">Blog</Link>
           </li>
 
-          {/* Services */}
+          {/* Services Dropdown */}
           <li
             className="relative"
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="hover:text-gray-600 transition">
+            <button className="hover:text-gray-300 transition">
               Services ▾
             </button>
 
             {isDropdownOpen && (
-              <ul className="absolute top-6 left-0 bg-white text-black shadow-lg rounded-lg p-3 space-y-2 w-48">
-                <li><Link href="/ac-repair" className="hover:text-gray-600 block">AC Repair</Link></li>
-                <li><Link href="/electronics-repair" className="hover:text-gray-600 block">Electronics Repair</Link></li>
-                <li><Link href="/working" className="hover:text-gray-600 block">AC Servicing</Link></li>
-                <li><Link href="/working" className="hover:text-gray-600 block">Fridge Repair</Link></li>
-                <li><Link href="/working" className="hover:text-gray-600 block">Washing Machine</Link></li>
+              <ul className="absolute top-6 left-0 bg-gray-700 text-white shadow-lg rounded-lg p-3 space-y-2 w-48">
+                <li><Link href="/ac-repair" className="hover:text-gray-300 block">AC Repair</Link></li>
+                <li><Link href="/electronics-repair" className="hover:text-gray-300 block">Electronics Repair</Link></li>
+                <li><Link href="/working" className="hover:text-gray-300 block">AC Servicing</Link></li>
+                <li><Link href="/working" className="hover:text-gray-300 block">Fridge Repair</Link></li>
+                <li><Link href="/working" className="hover:text-gray-300 block">Washing Machine</Link></li>
               </ul>
             )}
           </li>
 
-          <li className="hover:text-gray-600 transition">
+          <li className="hover:text-gray-300 transition">
             <Link href="/contact">Contact</Link>
           </li>
         </ul>
 
-        {/* Social Icons (Desktop) */}
-        <div className="hidden md:flex space-x-4 text-black">
-          <FontAwesomeIcon icon={faFacebook} className="text-lg hover:text-gray-600 cursor-pointer" />
-          <FontAwesomeIcon icon={faTwitter} className="text-lg hover:text-gray-600 cursor-pointer" />
-          <FontAwesomeIcon icon={faInstagram} className="text-lg hover:text-gray-600 cursor-pointer" />
+        {/* Social Icons */}
+        <div className="hidden md:flex space-x-4">
+          <FontAwesomeIcon icon={faFacebook} className="text-lg hover:text-gray-300 cursor-pointer" />
+          <FontAwesomeIcon icon={faTwitter} className="text-lg hover:text-gray-300 cursor-pointer" />
+          <FontAwesomeIcon icon={faInstagram} className="text-lg hover:text-gray-300 cursor-pointer" />
         </div>
 
         {/* Mobile Button */}
         <button
-          className="md:hidden text-black text-xl"
+          className="md:hidden text-xl"
           onClick={() => setIsOpen(!isOpen)}
         >
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
@@ -80,7 +80,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white text-black px-6 py-4 space-y-3 font-bold shadow-md">
+        <div className="md:hidden bg-gray-800 px-6 py-4 space-y-3 font-bold">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/blog">Blog</Link>
