@@ -14,11 +14,6 @@ export default function ContactForm() {
 
     const form = e.currentTarget;
 
-    // Debug env values
-    console.log("Service ID:", process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID);
-    console.log("Template ID:", process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
-    console.log("Public Key:", process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-
     try {
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
@@ -29,124 +24,90 @@ export default function ContactForm() {
 
       setStatus("success");
       form.reset();
-
       setTimeout(() => setStatus("idle"), 4000);
 
     } catch (error: any) {
       console.log("FULL ERROR:", error);
-      console.log("TEXT:", error?.text);
-      console.log("STATUS:", error?.status);
-
       setStatus("error");
       setTimeout(() => setStatus("idle"), 4000);
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-10 max-w-4xl mx-auto"
-    >
+    <form onSubmit={handleSubmit} className="space-y-10 max-w-4xl mx-auto">
+
       {/* Row 1 */}
       <div className="grid md:grid-cols-2 gap-10">
-        <div className="group">
-          <label className="block text-sm font-medium text-gray-500 mb-2 tracking-wide">
-            First name *
-          </label>
-          <input
-            type="text"
-            name="first_name"
-            required
-            className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-black"
-          />
-        </div>
+        <input
+          type="text"
+          name="first_name"
+          required
+          placeholder="First name *"
+          className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-blue-600 text-blue-600 placeholder:text-blue-400"
+        />
 
-        <div className="group">
-          <label className="block text-sm font-medium text-gray-500 mb-2 tracking-wide">
-            Last name *
-          </label>
-          <input
-            type="text"
-            name="last_name"
-            required
-            className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-black"
-          />
-        </div>
+        <input
+          type="text"
+          name="last_name"
+          required
+          placeholder="Last name *"
+          className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-blue-600 text-blue-600 placeholder:text-blue-400"
+        />
       </div>
 
       {/* Row 2 */}
       <div className="grid md:grid-cols-2 gap-10">
-        <div className="group">
-          <label className="block text-sm font-medium text-gray-500 mb-2 tracking-wide">
-            Company
-          </label>
-          <input
-            type="text"
-            name="company"
-            className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-black"
-          />
-        </div>
+        <input
+          type="text"
+          name="company"
+          placeholder="Company"
+          className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-blue-600 text-blue-600 placeholder:text-blue-400"
+        />
 
-        <div className="group">
-          <label className="block text-sm font-medium text-gray-500 mb-2 tracking-wide">
-            Email *
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-black"
-          />
-        </div>
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Email *"
+          className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-blue-600 text-blue-600 placeholder:text-blue-400"
+        />
       </div>
 
       {/* Row 3 */}
       <div className="grid md:grid-cols-2 gap-10">
-        <div className="group">
-          <label className="block text-sm font-medium text-gray-500 mb-2 tracking-wide">
-            Phone number *
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            required
-            className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-black"
-          />
-        </div>
+        <input
+          type="tel"
+          name="phone"
+          required
+          placeholder="Phone number *"
+          className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-blue-600 text-blue-600 placeholder:text-blue-400"
+        />
 
-        <div className="group">
-          <label className="block text-sm font-medium text-gray-500 mb-2 tracking-wide">
-            Budget
-          </label>
-          <input
-            type="text"
-            name="budget"
-            className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-black"
-          />
-        </div>
+        <input
+          type="text"
+          name="budget"
+          placeholder="Budget"
+          className="w-full border-b border-gray-300 bg-transparent py-3 outline-none transition-all duration-300 focus:border-blue-600 text-blue-600 placeholder:text-blue-400"
+        />
       </div>
 
       {/* Project Details */}
-      <div className="group">
-        <label className="block text-sm font-medium text-gray-500 mb-2 tracking-wide">
-          Project details *
-        </label>
-        <textarea
-          name="message"
-          rows={4}
-          required
-          className="w-full border-b border-gray-300 bg-transparent py-3 outline-none resize-none transition-all duration-300 focus:border-black"
-        />
-      </div>
+      <textarea
+        name="message"
+        rows={4}
+        required
+        placeholder="Project details *"
+        className="w-full border-b border-gray-300 bg-transparent py-3 outline-none resize-none transition-all duration-300 focus:border-blue-600 text-blue-600 placeholder:text-blue-400"
+      />
 
       {/* Submit Button */}
       <button
         type="submit"
         disabled={status === "submitting"}
-        className={`w-full mt-8 py-4 rounded-full font-semibold tracking-wide transition-all duration-300 ${
+        className={`w-full mt-8 py-4 rounded-full font-semibold transition-all duration-300 ${
           status === "submitting"
             ? "bg-gray-400 cursor-not-allowed text-white"
-            : "bg-black text-white hover:bg-gray-900 hover:shadow-xl active:scale-95"
+            : "bg-black text-white hover:bg-gray-900 active:scale-95"
         }`}
       >
         {status === "submitting" ? "Sending..." : "Send Message"}
@@ -164,6 +125,7 @@ export default function ContactForm() {
           Something went wrong. Please try again.
         </div>
       )}
+
     </form>
   );
 }
