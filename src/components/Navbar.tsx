@@ -15,11 +15,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-2">
 
         {/* Logo */}
-        <img
-          src="/Supercool_logo-removebg-preview.png"
-          alt="Logo"
-          className="w-24 md:w-28 object-contain"
-        />
+       <h1>GenCon</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-6 font-bold">
