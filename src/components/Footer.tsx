@@ -22,26 +22,25 @@ export default function Footer() {
           <p className="text-gray-400">info@gencon.ae</p>
         </div>
 
-        {/* ===== SERVICES ===== */}
+        {/* ===== SERVICES (MATCH NAVBAR) ===== */}
         <div>
           <h3 className="text-white font-semibold mb-4">Services</h3>
           <ul className="space-y-3">
-            <li><Link href="/ac-repair" className="hover:text-white transition">AC Repair</Link></li>
-            <li><Link href="/electronics-repair" className="hover:text-white transition">Electronics Repair</Link></li>
-            <li><Link href="/contact" className="hover:text-white transition">Installation</Link></li>
-            <li><Link href="/contact" className="hover:text-white transition">Maintenance</Link></li>
+            <li><Link href="/ac-repair" className="hover:text-white transition">HVAC Systems</Link></li>
+            <li><Link href="/electronics-repair" className="hover:text-white transition">Electro Mechanical</Link></li>
+            <li><Link href="/working" className="hover:text-white transition">MEP</Link></li>
+            <li><Link href="/working" className="hover:text-white transition">Renewable Energy</Link></li>
+            <li><Link href="/working" className="hover:text-white transition">Home Appliances</Link></li>
           </ul>
         </div>
 
-        {/* ===== QUICK LINKS ===== */}
+        {/* ===== NAVIGATION (ONLY NAVBAR LINKS) ===== */}
         <div>
-          <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+          <h3 className="text-white font-semibold mb-4">Navigation</h3>
           <ul className="space-y-3">
             <li><Link href="/" className="hover:text-white transition">Home</Link></li>
-            <li><Link href="/about" className="hover:text-white transition">About Us</Link></li>
+            <li><Link href="/about" className="hover:text-white transition">About</Link></li>
             <li><Link href="/blog" className="hover:text-white transition">Blog</Link></li>
-            <li><Link href="/ac-repair" className="hover:text-white transition">AC Repair</Link></li>
-            <li><Link href="/electronics-repair" className="hover:text-white transition">Electronics Repair</Link></li>
             <li><Link href="/contact" className="hover:text-white transition">Contact</Link></li>
           </ul>
         </div>
