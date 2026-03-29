@@ -50,10 +50,9 @@ export default function Navbar() {
               <ul className="absolute top-6 left-0 bg-gray-700 text-white shadow-lg rounded-lg p-3 space-y-2 w-48">
                 <li><Link href="/ac-repair" className="hover:text-gray-300 block">HVAC Systems</Link></li>
                 <li><Link href="/electronics-repair" className="hover:text-gray-300 block">Electro Mechanical</Link></li>
-                 <li><Link href="/working" className="hover:text-gray-300 block">MEP</Link></li>
+                <li><Link href="/working" className="hover:text-gray-300 block">MEP</Link></li>
                 <li><Link href="/working" className="hover:text-gray-300 block">Renewable Energy</Link></li>
                 <li><Link href="/working" className="hover:text-gray-300 block">Home Appliances</Link></li>
-               
               </ul>
             )}
           </li>
@@ -73,7 +72,10 @@ export default function Navbar() {
         {/* Mobile Button */}
         <button
           className="md:hidden text-xl"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            setIsDropdownOpen(false); // reset dropdown
+          }}
         >
           <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
         </button>
@@ -81,29 +83,31 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gray-800 px-6 py-4 space-y-3 font-bold">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/blog">Blog</Link>
+        <div className="md:hidden bg-gray-800 px-6 py-4 font-bold flex flex-col space-y-3">
 
+          <Link href="/" className="block py-2 hover:text-gray-300">Home</Link>
+          <Link href="/about" className="block py-2 hover:text-gray-300">About</Link>
+          <Link href="/blog" className="block py-2 hover:text-gray-300">Blog</Link>
+
+          {/* Mobile Dropdown */}
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full text-left"
+            className="w-full text-left py-2"
           >
             Services ▾
           </button>
 
           {isDropdownOpen && (
-            <div className="pl-4 space-y-2 font-medium">
-              <Link href="/ac-repair" className="block">AC Repair</Link>
-              <Link href="/electronics-repair" className="block">Electronics Repair</Link>
-              <Link href="/working" className="block">AC Servicing</Link>
-              <Link href="/working" className="block">Fridge Repair</Link>
-              <Link href="/working" className="block">Washing Machine</Link>
+            <div className="pl-4 space-y-2 font-medium flex flex-col">
+              <Link href="/ac-repair" className="block hover:text-gray-300">AC Repair</Link>
+              <Link href="/electronics-repair" className="block hover:text-gray-300">Electronics Repair</Link>
+              <Link href="/working" className="block hover:text-gray-300">AC Servicing</Link>
+              <Link href="/working" className="block hover:text-gray-300">Fridge Repair</Link>
+              <Link href="/working" className="block hover:text-gray-300">Washing Machine</Link>
             </div>
           )}
 
-          <Link href="/contact">Contact</Link>
+          <Link href="/contact" className="block py-2 hover:text-gray-300">Contact</Link>
         </div>
       )}
     </nav>
