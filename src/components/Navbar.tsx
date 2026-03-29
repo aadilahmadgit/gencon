@@ -58,12 +58,35 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Social Icons */}
-        <div className="hidden md:flex space-x-4">
-          <FontAwesomeIcon icon={faFacebook} className="text-lg hover:text-gray-300 cursor-pointer" />
-          <FontAwesomeIcon icon={faTwitter} className="text-lg hover:text-gray-300 cursor-pointer" />
-          <FontAwesomeIcon icon={faInstagram} className="text-lg hover:text-gray-300 cursor-pointer" />
-        </div>
+      
+     {/* Social Icons */}
+<div className="hidden md:flex space-x-4">
+
+  <a 
+    href="https://facebook.com/yourusername" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FontAwesomeIcon icon={faFacebook} className="text-lg hover:text-gray-300 cursor-pointer" />
+  </a>
+
+  <a 
+    href="https://twitter.com/yourusername" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FontAwesomeIcon icon={faTwitter} className="text-lg hover:text-gray-300 cursor-pointer" />
+  </a>
+
+  <a 
+    href="https://instagram.com/aadil124" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <FontAwesomeIcon icon={faInstagram} className="text-lg hover:text-gray-300 cursor-pointer" />
+  </a>
+
+</div>>
 
         {/* Mobile Button */}
         <button
