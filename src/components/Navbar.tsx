@@ -79,7 +79,7 @@ export default function Navbar() {
   </a>
 
   <a 
-    href="https://instagram.com/aadil124" 
+    href="https://instagram.com/Genconuae2026" 
     target="_blank" 
     rel="noopener noreferrer"
   >
