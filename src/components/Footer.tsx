@@ -18,8 +18,8 @@ export default function Footer() {
             We specialize in AC repair, electronics repair, and home appliance services.
           </p>
 
-          <p className="text-gray-400">+971 50 123 4567</p>
-          <p className="text-gray-400">info@gencon.ae</p>
+          <p className="text-gray-400">+971 55 635 5106</p>
+          <p className="text-gray-400">info@gencon</p>
         </div>
 
         {/* ===== SERVICES (MATCH NAVBAR) ===== */}
